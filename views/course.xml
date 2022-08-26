@@ -2,7 +2,7 @@
 <odoo>
     <data>
 
-        <!-- section tree view -->
+        <!-- section course tree view -->
         <record id="view_academic_course_tree" model="ir.ui.view">
             <field name="name">academic.course.tree</field>
             <field name="model">academic.course</field>
@@ -19,8 +19,8 @@
         </record>
 
 
-        <!-- section view course -->
-        <record id="view_academic_view_form" model="ir.ui.view">
+        <!-- section course form view  -->
+        <record id="view_academic_course_form" model="ir.ui.view">
             <field name="name">academic.course.form</field>
             <field name="model">academic.course</field>
             <field name="type">form</field>
@@ -44,6 +44,21 @@
                         <notebook>
                             <page string="Description">
                                 <field name="description" />
+                            </page>
+
+                            <!-- session page in form course -->
+                            <page string="Sessions">
+                                <field name="session_ids">
+                                    <!-- breakdown view session_ids -->
+                                    <tree string="session">
+                                        <field name="name" />
+                                        <field name="instructor_id" />
+                                        <field name="start_date" />
+                                        <field name="duration" />
+                                        <field name="seats" />
+                                        <field name="active" />
+                                    </tree>
+                                </field>
                             </page>
                         </notebook>
                     </sheet>
