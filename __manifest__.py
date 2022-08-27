@@ -28,6 +28,7 @@
         'views/menu.xml',
         'views/course.xml',
         'views/session.xml',
+        'views/attendee.xml',
         'views/views.xml',
         'views/templates.xml',
     ],
@@ -35,4 +36,5 @@
     'demo': [
         'demo/demo.xml',
     ],
+    'application': True,
 }
