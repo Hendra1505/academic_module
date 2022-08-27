@@ -22,3 +22,6 @@ class Session(models.Model):
     duration = fields.Integer("Duration")
     seats = fields.Integer("Seats")
     active = fields.Boolean("Is Active", default=True)
+
+    attendee_ids = fields.One2many(
+        comodel_name="academic.attendee", string="Attendees", inverse_name="session_id")

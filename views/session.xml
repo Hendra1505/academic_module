@@ -50,6 +50,21 @@
                                 <field name="active" />
                             </group>
                         </group>
+
+                        <notebook>
+                            <!-- Attendee page in form session -->
+                            <page string="Attendees">
+                                <field name="attendee_ids">
+                                    <!-- breakdown view page attendee pada session view -->
+                                    <tree string="attendee" editable="bottom">
+                                        <field name="name" />
+                                        <field name="session_id" />
+                                        <field name="partner_id" />
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+
                     </sheet>
                 </form>
             </field>

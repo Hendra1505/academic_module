@@ -49,8 +49,8 @@
                             <!-- session page in form course -->
                             <page string="Sessions">
                                 <field name="session_ids">
-                                    <!-- breakdown view session_ids -->
-                                    <tree string="session">
+                                    <!-- breakdown view page session pada course view -->
+                                    <tree string="session" editable="bottom">
                                         <field name="name" />
                                         <field name="instructor_id" />
                                         <field name="start_date" />
@@ -58,6 +58,17 @@
                                         <field name="seats" />
                                         <field name="active" />
                                     </tree>
+
+                                    <form>
+                                        <group>
+                                            <field name="name" />
+                                            <field name="instructor_id" />
+                                            <field name="start_date" />
+                                            <field name="duration" />
+                                            <field name="seats" />
+                                        </group>
+                                    </form>
+
                                 </field>
                             </page>
                         </notebook>
