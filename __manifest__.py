@@ -29,6 +29,7 @@
         'views/course.xml',
         'views/session.xml',
         'views/attendee.xml',
+        'views/partner.xml',
         'views/views.xml',
         'views/templates.xml',
     ],

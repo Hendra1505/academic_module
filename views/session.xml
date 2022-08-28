@@ -40,7 +40,7 @@
                         <group>
                             <group string="Wajib di isi">
                                 <field name="course_id" />
-                                <field name="instructor_id" />
+                                <field name="instructor_id" domain="['|', ('is_instructor', '=', True), ('category_id', 'ilike', 'pelatih')]" />
                                 <field name="start_date" />
                             </group>
 
