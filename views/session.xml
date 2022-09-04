@@ -84,5 +84,16 @@
             </field>
         </record>
 
+
+        <!-- Section session graph view -->
+        <record id="view_academic_session_graph" model="ir.ui.view">
+            <field name="name">academic.session.graph</field>
+            <field name="model">academic.session</field>
+            <field name="arch" type="xml">
+                <graph string="Session Graph" type="bar">
+                    <field name="instructor_id" />
+                </graph>
+            </field>
+        </record>
     </data>
 </odoo>
