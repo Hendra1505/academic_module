@@ -23,3 +23,7 @@ class Course(models.Model):
         comodel_name="academic.session",
         string="Session",
         inverse_name="course_id")
+
+    _sql_constraints = [
+        ('sql_cek_name', 'UNIQUE(name)', 'Name tidak boleh Double!'),
+        ('sql_cek_desc', 'CHECK(name <> description)', 'Name dan description tidak boleh sama')]

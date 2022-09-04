@@ -14,3 +14,7 @@ class Attendee(models.Model):
 
     partner_id = fields.Many2one(
         comodel_name="res.partner", string="Partner")
+
+    # Constraint atau validasi dengan cara sql constraint
+    _sql_constraints = [('sql_cek_attendee', 'UNIQUE(session_id, partner_id)',
+                         'Attendee tidak boleh double dalam 1 session!')]
