@@ -8,7 +8,7 @@
             <field name="model">academic.session</field>
             <field name="type">tree</field>
             <field name="arch" type="xml">
-                <tree string="Session" colors="1:taken_seats &gt; 60; 4:taken_seats &lt; 20">
+                <tree string="Session" decoration-warning="taken_seats &gt; 60" decoration-success="taken_seats &lt; 20">
                     <field name="name" />
                     <field name="course_id" />
                     <field name="instructor_id" />
@@ -95,5 +95,45 @@
                 </graph>
             </field>
         </record>
+
+
+        <!-- Section session kanban view -->
+        <record id="view_academic_session_kanban" model="ir.ui.view">
+            <field name="name">academic.session.kanban</field>
+            <field name="model">academic.session</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <field name='id' />
+                    <field name='name' />
+                    <field name='seats' />
+                    <field name='taken_seats' />
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click">
+                                <div class="o_kanban_image">
+                                    <img alt="Avatar" t-att-src="kanban_image('academic.session', 'image_small', record.id.value)"/>
+                                </div>
+
+                                <div class="oe_kanban_details">
+                                    <h4 class="o_kanban_record_title">
+                                        <field name="name" />
+                                    </h4>
+                                    <div t-if="record.seats.value">
+                                        Seats : <t t-esc="record.seats.value"/>
+                                    </div>
+                                    <div t-if="record.taken_seats.value">
+                                        Taken Seats : <t t-esc="record.taken_seats.value"/>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+
+
     </data>
 </odoo>
